@@ -10,14 +10,33 @@ function getParsedArr(str) {
         .sort((a, b) => a - b);
 }
 
-let arr1 = getParsedArr(str1);
-console.log("🚀 ~ arr1:", arr1);
-let arr2 = getParsedArr(str2);
-console.log("🚀 ~ arr2:", arr2);
-let num = 0;
+let arrLeft = getParsedArr(str1);
+console.log("🚀 ~ arrLeft:", arrLeft);
+let arrRight = getParsedArr(str2);
+console.log("🚀 ~ arrRight:", arrRight);
 
-arr1.forEach((_, idx) => {
-    num += Math.abs(arr1[idx] - arr2[idx]);
+// part 1
+
+let num = 0;
+arrLeft.forEach((_, idx) => {
+    num += Math.abs(arrLeft[idx] - arrRight[idx]);
 });
 
-console.log(num);
+// part 2
+
+let simNum = 0;
+const uniqCount = new Map();
+arrRight.forEach((i) => {
+    if (uniqCount.has(i)) {
+        uniqCount.set(i, uniqCount.get(i) + 1);
+    } else {
+        uniqCount.set(i, 1);
+    }
+});
+
+arrLeft.forEach((i) => {
+    const num = uniqCount.get(i);
+    simNum += num ? num * i : 0;
+});
+
+console.log("🚀 ~ uniqCount:", simNum);
