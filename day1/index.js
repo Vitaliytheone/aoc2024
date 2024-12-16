@@ -11,10 +11,7 @@ function getParsedArr(str) {
 }
 
 let arrLeft = getParsedArr(str1);
-console.log("🚀 ~ arrLeft:", arrLeft);
 let arrRight = getParsedArr(str2);
-console.log("🚀 ~ arrRight:", arrRight);
-
 // part 1
 
 let num = 0;
@@ -38,5 +35,3 @@ arrLeft.forEach((i) => {
     const num = uniqCount.get(i);
     simNum += num ? num * i : 0;
 });
-
-console.log("🚀 ~ uniqCount:", simNum);
