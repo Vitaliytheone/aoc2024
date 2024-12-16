@@ -1,1 +1,1 @@
-aoc 2024
+[aoc 2024](https://adventofcode.com/2024)
