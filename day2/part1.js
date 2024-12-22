@@ -14,6 +14,7 @@ function getRange(v1, v2, isIncrease) {
 }
 
 let matrixArr = getParsedArr(str);
+
 let safe = 0;
 for (let el of matrixArr) {
     for (let i = 0; i < el.length; i++) {
@@ -25,4 +26,5 @@ for (let el of matrixArr) {
         if (lastEl) safe += 1;
     }
 }
-console.log("🚀 ~ safe:", safe);
+
+console.log(safe);
